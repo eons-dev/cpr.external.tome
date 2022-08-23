@@ -1,0 +1,6 @@
+[submodule "cpr"]
+	path = cpr
+	url = https://github.com/libcpr/cpr
+[submodule ".github/workflows"]
+	path = .github/workflows
+	url = https://github.com/eons-dev/part_ebbs-workflows.git
