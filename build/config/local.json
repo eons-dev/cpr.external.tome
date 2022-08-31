@@ -1,13 +1,8 @@
 {
   "name" : "cpr",
   "type" : "lib",
-  "build_in": "github",
-  "clear_build_path" : true,
   "next": [
     {
-      "run_when" : [
-        "release"
-      ],
       "build" : "in_container",
       "build_in": "tome_cpr-external",
       "config" : {
@@ -22,7 +17,7 @@
           {
             "build" : "arbitrary",
             "copy" : [
-              {"../../../cpr/" : "cpr/"}
+              {"../../../../cpr/" : "cpr/"}
             ],
             "config" : {
               "commands": [
@@ -39,11 +34,11 @@
               ],
               "next" : [
                 {
-                  "build": "publish",
-                  "build_in" : "BUILD_COMPLETE",
-                  "run_when" : [
+                  "run_when_any" : [
                     "release"
                   ],
+                  "build": "publish",
+                  "build_in" : "BUILD_COMPLETE",
                   "config": {
                     "clear_build_path" : false,
                     "type": "tome",
